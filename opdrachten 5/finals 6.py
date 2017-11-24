@@ -6,7 +6,7 @@ def lees_bestand():
     infile.close()
     kluizen = []
     for line in lines:
-        gesplist = line.strip().split(';')
+        gesplist = line.strip().split(',')
         kluis = [int(gesplist[0]), gesplist[1]]
         kluizen.append(kluis)
     return kluizen
@@ -21,12 +21,14 @@ def kluis_openen():
     vul1 = int(input('vul uw kluis in: '))
     vul2 = input('vul uw code in: ')
     kluizen = lees_bestand()
+    kluisopen = False
     for kluis in kluizen:
         if kluis[0] == vul1 and kluis[1] == vul2:
+            kluisopen = True
             print('je mag je kluis in')
             break
-        else:
-            print('error')
+    if kluisopen == False:
+        print('error')
 
 def nieuwe_kluis():
     kluizen = lees_bestand()
@@ -53,7 +55,7 @@ while True:
     print('1: Ik wil weten hoeveel kluizen nog vrij zijn ')
     print('2: Ik wil een nieuwe kluis ')
     print('3: Ik wil even iets uit mijn kluis halen ')
-    print('stop')
+    print('5: stop')
 
     keuze = eval(input('Uw keuze: '))
     if keuze == 1:
@@ -62,5 +64,7 @@ while True:
         nieuwe_kluis()
     elif keuze == 3:
         kluis_openen()
+    elif keuze == 5:
+        break
     else:
         print('error')
