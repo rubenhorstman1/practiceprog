@@ -1,0 +1,62 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/app-storage/app-localstorage/app-localstorage-document.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/app-drawer.html/app-drawer.html">
+<link rel="import" href="../../bower_components/app-header.html/app-header.html">
+<link rel="import" href="../../bower_components/app-toolbar.html/app-toolbar.html">
+<link rel="import" href="../../bower_components/iron-flex-layout.html/iron-flex-layout.html">
+<dom-module id="newpag-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <app-drawer>
+      <app-toolbar>Menu</app-toolbar>
+      <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+        <a name="view1" href="/view1">View One</a>
+        <a name="view2" href="/view2">View Two</a>
+        <a name="view3" href="/view3">View Three</a>
+        <a name="out-element" href="/app-in">New View</a>
+      </iron-selector>
+    </app-drawer>
+    <iron-pages
+        selected="[[page]]"
+        attr-for-selected="name"
+        fallback-selection="view404"
+        role="main">
+      <my-view1 name="view1"></my-view1>
+      <my-view2 name="view2"></my-view2>
+      <my-view3 name="view3"></my-view3>
+      <app-out-element name="app-in-element"></app-in-element>
+      <my-view404 name="view404"></my-view404>
+    </iron-pages>
+
+
+    <app-localstorage-document key="naam" data="{{naam}}"></app=app-localstorage-document>
+<h1> hoi<h1>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class NewPagApp extends Polymer.Element {
+      static get is() { return 'newpag-app'; }
+      static get properties() {
+        return {
+          naam: String,
+          email: String,
+          telefoon: String,
+          adres: String
+        };
+      }
+    }
+
+    window.customElements.define(NewPagApp.is, NewPagApp);
+  </script>

@@ -1,0 +1,42 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<link rel="import" href="../../src/vbws5-app/eet-gerechthtml">
+<dom-module id="app-common-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+
+    <app-in-element
+      naam="{{naam}}"
+      email="{{email}}"
+      telefoon="{{telefoon}}"
+      adres="{{adres}}"></app-in-element>
+    <app-out-element
+      naam="{{naam}}"
+      email="{{email}}"
+      telefoon="{{telefoon}}"
+      adres="{{adres}}"></app-out-element>
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class AppCommonElement extends Polymer.Element {
+      static get is() { return 'app-common-element'; }
+      static get properties() {
+        return {
+
+        };
+      }
+    }
+
+    window.customElements.define(AppCommonElement.is, AppCommonElement);
+  </script>
+</dom-module>

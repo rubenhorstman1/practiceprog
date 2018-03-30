@@ -1,0 +1,90 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../iron-icons/maps-icons.html">
+
+<link rel="import" href="../../src/vbws5-app/newpag-app.html">
+<link rel="import" href="eet-gerecht">
+
+<dom-module id="app-in-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      paper-button.green {
+  background-color: var(--paper-green-500);
+  color: white;
+  properties: disabled;
+}
+paper-button.green[active] {
+  background-color: var(--paper-red-500);
+}
+.div2{
+  margin: 10px 20px 50px 20px;
+  float: right;
+  size: 300%;
+  left: 570px;
+  top: 450px;
+  position: fixed;
+}
+.div3{
+  margin: 10px 20px 50px 20px;
+  float: right;
+  left: 530px;
+  top: 250px;
+  position: fixed;
+}
+.div4{
+  margin: 10px 20px 50px 0px;
+  float: right;
+  left: 10px;
+  top: 650px;
+  width: 10px;
+  position: fixed;
+}
+h1{
+  font-size: 50px;
+}
+.div5{
+  margin: 50px 20px 0px 50px
+}
+paper-button.disabled {
+    color: white;
+  }
+    </style>
+    <paper-toolbar>
+  <paper-icon-button slot="top" icon="backspace" on-tap="menuAction"></paper-icon-button>
+  <div slot="top" class="title">Title</div>
+  <paper-icon-button slot="top" icon="more-vert" on-tap="moreAction"></paper-icon-button>
+</paper-toolbar>
+    <div class="div5"><h1>Tokio Sushi</h1></div>
+
+<tr
+    <td><a href="../vbws5/eet-gerecht"><div class="div2"><paper-button disabled class="disabled"><h1>rekening</h1></paper-button></div></a><td>
+    <a href="../vbws5/eet-gerecht"><div class="div3"><paper-button toggles raised class="custom green"><h1>kies gerecht</h1></paper-button></div></a>
+    <a href="../vbws5/eet-gerecht"><div class="div4"><paper-button toggles raised class="custom green"><h3>back</h3></paper-button></div></a>
+
+
+  <tr>
+  </template>
+
+  <script>
+    class AppInElement extends Polymer.Element {
+      static get is() { return 'app-in-element'; }
+      static get properties() {
+        return {
+          gerecht1: String,
+          gerecht2: String,
+          gerecht3: String,
+          gerecht4: String
+        };
+      }
+    }
+      window.customElements.define(AppInElement.is, AppInElement);
+  </script>
+</dom-module>

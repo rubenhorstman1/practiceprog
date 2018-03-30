@@ -1,0 +1,47 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<!--
+<link rel="import" href="../../bower_components/paper-contact-list/paper-contact-list.html">
+-->
+<dom-module id="app-out-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <!--<paper-contact-list> -->
+
+    
+    <!--
+    </paper-contact-list> -->
+
+    <!--
+    <paper-input label="naam" value="{{naam}}"></paper-input>
+    <paper-input label="email" value="{{email}}"></paper-input>
+    <paper-input label="telefoon" value="{{telefoon}}"></paper-input>
+    <paper-input label="adres" value="{{adres}}"></paper-input>
+    -->
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class AppOutElement extends Polymer.Element {
+      static get is() { return 'app-out-element'; }
+      static get properties() {
+        return {
+          naam: String,
+          email: String,
+          telefoon: String,
+          adres: String
+        };
+      }
+    }
+
+    window.customElements.define(AppOutElement.is, AppOutElement);
+  </script>
+</dom-module>

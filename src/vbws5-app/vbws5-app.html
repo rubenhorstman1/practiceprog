@@ -1,0 +1,39 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+
+<dom-module id="vbws5-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    
+
+    <paper-input label="naam" value="{{naam}}"></paper-input>
+    <paper-input label="email" value="{{email}}"></paper-input>
+    <paper-input label="telefoon" value="{{telefoon}}"></paper-input>
+    <paper-input label="adres" value="{{adres}}"></paper-input>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class Vbws5App extends Polymer.Element {
+      static get is() { return 'vbws5-app'; }
+      static get properties() {
+        return {
+          naam: String,
+          email: String,
+          telefoon: String,
+          adres: String
+
+        };
+      }
+    }
+
+    window.customElements.define(Vbws5App.is, Vbws5App);
+  </script>
+</dom-module>
